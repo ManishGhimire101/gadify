@@ -1,0 +1,149 @@
+.vehicle-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 24px;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.vehicle-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.vehicle-icon-wrapper {
+  flex-shrink: 0;
+}
+
+.vehicle-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.vehicle-icon.bus {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.vehicle-icon.train {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.vehicle-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.vehicle-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vehicle-route {
+  font-size: 14px;
+  color: #718096;
+  font-weight: 500;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-badge.on-time {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.status-badge.delayed {
+  background: #fed7d7;
+  color: #742a2a;
+}
+
+.vehicle-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #4a5568;
+}
+
+.detail-item svg {
+  flex-shrink: 0;
+  color: #667eea;
+}
+
+.detail-item > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.detail-label {
+  font-size: 12px;
+  color: #718096;
+  margin-bottom: 2px;
+}
+
+.detail-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a202c;
+}
+
+.occupancy-bar {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.occupancy-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+.occupancy-fill.low {
+  background: linear-gradient(90deg, #48bb78, #68d391);
+}
+
+.occupancy-fill.medium {
+  background: linear-gradient(90deg, #ed8936, #f6ad55);
+}
+
+.occupancy-fill.high {
+  background: linear-gradient(90deg, #f56565, #fc8181);
+}
+
+.occupancy-label {
+  font-size: 12px;
+  color: #718096;
+  font-weight: 500;
+}

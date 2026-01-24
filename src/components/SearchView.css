@@ -1,0 +1,273 @@
+.search-view {
+  min-height: 100vh;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+}
+
+.app-logo {
+  font-size: 48px;
+  cursor: pointer;
+}
+
+.header-text h1 {
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.header-text p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+}
+
+.connection-status {
+  margin-left: auto;
+  padding: 8px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.connection-status.online {
+  background: rgba(72, 187, 120, 0.2);
+  color: #48bb78;
+}
+
+.connection-status.offline {
+  background: rgba(237, 137, 54, 0.2);
+  color: #ed8936;
+}
+
+.offline-banner {
+  background: rgba(237, 137, 54, 0.9);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.search-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin-bottom: 32px;
+}
+
+.main-question h2 {
+  font-size: 24px;
+  color: #1a202c;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #f7fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  transition: all 0.3s;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: #667eea;
+  background: white;
+}
+
+.search-input-wrapper.destination {
+  border-color: #667eea;
+}
+
+.search-input-wrapper svg {
+  color: #667eea;
+  flex-shrink: 0;
+}
+
+.search-input-wrapper input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #1a202c;
+  outline: none;
+}
+
+.search-input-wrapper input::placeholder {
+  color: #a0aec0;
+}
+
+.search-input-wrapper span {
+  flex: 1;
+  font-size: 16px;
+  color: #4a5568;
+  cursor: pointer;
+}
+
+.location-icon {
+  color: #48bb78;
+}
+
+.search-button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 8px;
+}
+
+.search-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+}
+
+.search-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.popular-destinations {
+  margin-bottom: 32px;
+}
+
+.popular-destinations h3 {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.destination-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dest-icon {
+  font-size: 32px;
+}
+
+.dest-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.dest-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a202c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dest-subtitle {
+  font-size: 12px;
+  color: #718096;
+}
+
+.info-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 24px;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-card h4 {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-card li {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+}
+
+.info-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #48bb78;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .search-view {
+    padding: 16px;
+  }
+
+  .search-header {
+    padding: 16px;
+  }
+
+  .app-logo {
+    font-size: 36px;
+  }
+
+  .header-text h1 {
+    font-size: 22px;
+  }
+
+  .search-container {
+    padding: 24px;
+  }
+
+  .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+}

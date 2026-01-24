@@ -1,0 +1,214 @@
+.nepal-vehicle-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.vehicle-header-nepal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.vehicle-type-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.vehicle-emoji {
+  font-size: 18px;
+}
+
+.vehicle-type-text {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.confidence-indicator {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.confidence-inner {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.route-info-nepal {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.route-info-nepal h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 6px;
+}
+
+.vehicle-number {
+  font-size: 13px;
+  color: #718096;
+  font-weight: 500;
+  font-family: 'Courier New', monospace;
+}
+
+.next-stop-info {
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.next-stop-label {
+  font-size: 11px;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.next-stop-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 8px;
+}
+
+.eta-display {
+  font-size: 16px;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.vehicle-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 8px 0;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.last-updated {
+  color: #718096;
+  font-size: 12px;
+}
+
+.data-sources {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 8px 0;
+}
+
+.data-source-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #f7fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #667eea;
+  border: 1px solid #e2e8f0;
+}
+
+.occupancy-bar-nepal {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.occupancy-fill-nepal {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+.occupancy-fill-nepal.low {
+  background: linear-gradient(90deg, #48bb78, #68d391);
+}
+
+.occupancy-fill-nepal.medium {
+  background: linear-gradient(90deg, #ed8936, #f6ad55);
+}
+
+.occupancy-fill-nepal.high {
+  background: linear-gradient(90deg, #f56565, #fc8181);
+}
+
+.occupancy-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #718096;
+  font-weight: 500;
+}
+
+.fare-info {
+  color: #48bb78;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .nepal-vehicle-card {
+    padding: 16px;
+  }
+
+  .next-stop-name {
+    font-size: 18px;
+  }
+}
