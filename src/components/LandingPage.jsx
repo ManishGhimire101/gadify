@@ -204,9 +204,12 @@ const LandingPage = ({ onEnterApp }) => {
             whileTap={{ scale: 0.95 }}
             onClick={() => {
               const link = document.createElement('a');
-              link.href = '/Public Transportation Locator System – Planning & Feasibility Report (nepal).pdf';
-              link.download = 'Public Transportation Locator System – Planning & Feasibility Report (nepal).pdf';
+              link.href = './report.pdf';
+              link.download = 'Public_Transportation_Planning_Report_Nepal.pdf';
+              link.target = '_blank';
+              document.body.appendChild(link);
               link.click();
+              document.body.removeChild(link);
             }}
           >
             📄 Download Planning Report
@@ -601,10 +604,10 @@ const LandingPage = ({ onEnterApp }) => {
             App Interface Preview
           </motion.h2>
           <div className="screenshots-grid">
-            {imagesLoaded && [
-              { src: '/assets/Screenshot_20260128-161714_Trebuchet.png', alt: 'App Screenshot 1' },
-              { src: '/assets/Screenshot_20260128-161806_Trebuchet.png', alt: 'App Screenshot 2' },
-              { src: '/assets/Screenshot_20260128-161820_Trebuchet.png', alt: 'App Screenshot 3' }
+            {imagesLoaded ? [
+              { src: './assets/Screenshot_20260128-161714_Trebuchet.png', alt: 'App Screenshot 1' },
+              { src: './assets/Screenshot_20260128-161806_Trebuchet.png', alt: 'App Screenshot 2' },
+              { src: './assets/Screenshot_20260128-161820_Trebuchet.png', alt: 'App Screenshot 3' }
             ].map((screenshot, i) => (
               <motion.div
                 key={i}
@@ -613,9 +616,19 @@ const LandingPage = ({ onEnterApp }) => {
                 animate={currentPage === 7 ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.3 + i * 0.2, duration: 0.6 }}
               >
-                <img src={screenshot.src} alt={screenshot.alt} className="screenshot-img" />
+                <img 
+                  src={screenshot.src} 
+                  alt={screenshot.alt} 
+                  className="screenshot-img"
+                  onError={(e) => {
+                    console.error('Failed to load image:', screenshot.src);
+                    e.target.style.display = 'none';
+                  }}
+                />
               </motion.div>
-            ))}
+            )) : (
+              <div className="loading-placeholder">Loading screenshots...</div>
+            )}
           </div>
           <motion.p
             className="explanation-text"
