@@ -701,6 +701,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  z-index: 999;
 }
 
 .download-report-button:hover {
@@ -1247,5 +1248,6 @@
   .download-report-button {
     font-size: 13px;
     padding: 10px 20px;
+    z-index: 999;
   }
 }
