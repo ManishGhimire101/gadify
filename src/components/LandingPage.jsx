@@ -5,8 +5,9 @@ import './LandingPage.css';
 
 const LandingPage = ({ onEnterApp }) => {
   const [currentPage, setCurrentPage] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   const containerRef = useRef(null);
-  const pages = 8;
+  const pages = 9;
 
   const navigateToPage = (pageIndex) => {
     const container = containerRef.current;
@@ -15,6 +16,14 @@ const LandingPage = ({ onEnterApp }) => {
     setCurrentPage(newPage);
     container.style.transform = `translateY(-${newPage * 100}vh)`;
   };
+
+  // Load images after 1 second to reduce initial page load
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setImagesLoaded(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -186,6 +195,22 @@ const LandingPage = ({ onEnterApp }) => {
             <br />
             Made for everyday commuters.
           </motion.p>
+          <motion.button
+            className="download-report-button"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.5, duration: 0.6 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              const link = document.createElement('a');
+              link.href = '/Public Transportation Locator System – Planning & Feasibility Report (nepal).pdf';
+              link.download = 'Public Transportation Locator System – Planning & Feasibility Report (nepal).pdf';
+              link.click();
+            }}
+          >
+            📄 Download Planning Report
+          </motion.button>
           <motion.div
             className="scroll-hint"
             animate={{ y: [0, 10, 0] }}
@@ -561,7 +586,7 @@ const LandingPage = ({ onEnterApp }) => {
           </motion.p>
         </motion.section>
 
-        {/* PAGE 8 - Impact */}
+        {/* PAGE 8 - Screenshots */}
         <motion.section
           className="landing-page page-8"
           initial="hidden"
@@ -569,9 +594,50 @@ const LandingPage = ({ onEnterApp }) => {
           variants={pageVariants}
         >
           <motion.h2
-            className="page-title impact-title"
+            className="page-title"
             initial={{ opacity: 0 }}
             animate={currentPage === 7 ? { opacity: 1 } : {}}
+          >
+            App Interface Preview
+          </motion.h2>
+          <div className="screenshots-grid">
+            {imagesLoaded && [
+              { src: '/assets/Screenshot_20260128-161714_Trebuchet.png', alt: 'App Screenshot 1' },
+              { src: '/assets/Screenshot_20260128-161806_Trebuchet.png', alt: 'App Screenshot 2' },
+              { src: '/assets/Screenshot_20260128-161820_Trebuchet.png', alt: 'App Screenshot 3' }
+            ].map((screenshot, i) => (
+              <motion.div
+                key={i}
+                className="screenshot-container"
+                initial={{ opacity: 0, y: 30 }}
+                animate={currentPage === 7 ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.3 + i * 0.2, duration: 0.6 }}
+              >
+                <img src={screenshot.src} alt={screenshot.alt} className="screenshot-img" />
+              </motion.div>
+            ))}
+          </div>
+          <motion.p
+            className="explanation-text"
+            initial={{ opacity: 0 }}
+            animate={currentPage === 7 ? { opacity: 1 } : {}}
+            transition={{ delay: 1, duration: 0.6 }}
+          >
+            Real interface design for the public transportation app.
+          </motion.p>
+        </motion.section>
+
+        {/* PAGE 9 - Impact */}
+        <motion.section
+          className="landing-page page-9"
+          initial="hidden"
+          animate={currentPage === 8 ? "visible" : "hidden"}
+          variants={pageVariants}
+        >
+          <motion.h2
+            className="page-title impact-title"
+            initial={{ opacity: 0 }}
+            animate={currentPage === 8 ? { opacity: 1 } : {}}
           >
             Why This Matters
           </motion.h2>
@@ -586,7 +652,7 @@ const LandingPage = ({ onEnterApp }) => {
                 key={i}
                 className="impact-item"
                 initial={{ opacity: 0, y: 20 }}
-                animate={currentPage === 7 ? { opacity: 1, y: 0 } : {}}
+                animate={currentPage === 8 ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.3 + i * 0.2, duration: 0.6 }}
               >
                 <div className="impact-number">{i + 1}</div>
@@ -597,7 +663,7 @@ const LandingPage = ({ onEnterApp }) => {
           <motion.div
             className="final-statement"
             initial={{ opacity: 0, scale: 0.95 }}
-            animate={currentPage === 7 ? { opacity: 1, scale: 1 } : {}}
+            animate={currentPage === 8 ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 1.2, duration: 0.8 }}
           >
             <h3>This is not just an app.</h3>
@@ -606,7 +672,7 @@ const LandingPage = ({ onEnterApp }) => {
           <motion.button
             className="enter-app-button"
             initial={{ opacity: 0, y: 20 }}
-            animate={currentPage === 7 ? { opacity: 1, y: 0 } : {}}
+            animate={currentPage === 8 ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 1.6, duration: 0.6 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -618,7 +684,7 @@ const LandingPage = ({ onEnterApp }) => {
           <motion.footer
             className="landing-footer"
             initial={{ opacity: 0 }}
-            animate={currentPage === 7 ? { opacity: 1 } : {}}
+            animate={currentPage === 8 ? { opacity: 1 } : {}}
             transition={{ delay: 2, duration: 0.6 }}
           >
             <div className="footer-content">

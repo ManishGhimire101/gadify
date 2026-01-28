@@ -686,6 +686,29 @@
   margin: 6px 0;
 }
 
+.download-report-button {
+  padding: 14px 32px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #000;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.download-report-button:hover {
+  background: #fff;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
 .enter-app-button {
   padding: 16px 40px;
   background: #fff;
@@ -701,6 +724,41 @@
 
 .enter-app-button:hover {
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+}
+
+/* Page 8 - Screenshots */
+.screenshots-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+.screenshot-container {
+  flex: 0 1 auto;
+  max-width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+}
+
+.screenshot-container:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 60px rgba(255, 255, 255, 0.2);
+}
+
+.screenshot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.page-title {
+  margin: 0 !important;
 }
 
 .landing-footer {
@@ -1160,8 +1218,26 @@
     padding: 20px 15px !important;
   }
 
+  .page-9 {
+    padding: 20px 15px !important;
+  }
+
   .impact-points {
     gap: 24px;
     margin-bottom: 40px;
+  }
+
+  .screenshots-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .screenshot-container {
+    max-width: 100%;
+  }
+
+  .download-report-button {
+    font-size: 13px;
+    padding: 10px 20px;
   }
 }
